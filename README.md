@@ -1,96 +1,121 @@
 # SOLON Protocol
 
-**An open-source operating system for human coordination.**
+**Ein dezentrales Betriebssystem für menschliche Koordination.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## What is this?
+## Was ist das?
 
-SOLON is a protocol for decentralized governance, transparent resource allocation, and reputation-based cooperation. It combines:
+SOLON ist ein Open-Source-Protokoll für dezentrale Governance, transparente Ressourcenallokation und reputationsbasierte Kooperation. Es kombiniert:
 
-- **Liquid Democracy** — vote directly or delegate to trusted experts, revocable anytime
-- **Dual Currency** — Bitcoin (store of value) + Tick (community currency with 1% monthly flow to commons)
-- **Heartbeat** — multidimensional reputation via non-transferable Soulbound Tokens
-- **Agora** — physical community spaces designed for encounter, not isolation
+- **Duales Geldsystem** — Bitcoin (Wertspeicher) + Solon (Umlaufwährung mit programmierbarer Demurrage)
+- **Liquid Democracy** — direkt abstimmen oder an Experten delegieren, jederzeit widerrufbar
+- **Heartbeat** — multidimensionale Reputation via nicht-übertragbare Pulse (Soulbound Tokens)
+- **Genesis-Nodes** — KI-Agenten für autonome Ressourcenallokation bei öffentlichen Projekten
+- **Liquidity Pool** — dezentrale Kreditvergabe mit dynamischem Zins und Solon-Bonds
 
-Read the full **[Whitepaper](WHITEPAPER.md)**.
+Das vollständige **[Whitepaper](WHITEPAPER.md)** lesen.
 
-## Why?
+## Warum?
 
-Every political system solves coordination and creates corruption. Every economic system values what can be priced and ignores what matters most. Every labor system couples survival to employment — even as machines replace employment.
+Jedes politische System löst Koordination und erzeugt Korruption. Jedes Wirtschaftssystem bewertet, was bepreist werden kann, und ignoriert, was zählt. Jedes Arbeitssystem koppelt Überleben an Erwerbstätigkeit — auch wenn Maschinen die Erwerbstätigkeit ersetzen.
 
-SOLON is not a fix. It's an experiment. Open-source, opt-in, forkable.
+SOLON ist kein Fix. Es ist ein Experiment. Open Source, opt-in, forkable.
 
 ## Status
 
-🟡 **Pre-alpha.** The whitepaper is published. The code is being built. We need help.
+🟡 **Pre-Alpha.** Das Whitepaper ist veröffentlicht. Der Code wird gebaut. Wir brauchen Hilfe.
 
-## How to Help
+## Mitarbeiten
 
-| You are a... | You can... |
+| Du bist... | Du kannst... |
 |---|---|
-| **Solidity developer** | Build and audit smart contracts (Tick, Liquid Democracy, SBTs) |
-| **Mobile developer** | Build the Chronos Wallet (React Native / Flutter) |
-| **Cryptographer** | Implement ZKP voting and identity modules |
-| **Economist** | Model and stress-test the Tick demurrage system |
-| **City planner** | Design Agora spatial guidelines |
-| **Lawyer** | Explore legal frameworks for community currencies and DAOs |
-| **Writer / Translator** | Translate the whitepaper, write documentation |
-| **Anyone** | Join the conversation, start a local group, cook dinner |
+| **Solidity-Entwickler** | Smart Contracts bauen und auditieren (Solon-Core, Liquid Democracy, Pulse) |
+| **Mobile-Entwickler** | Die Citizen Wallet bauen (React Native / Flutter) |
+| **KI/ML-Ingenieur** | Genesis-Node-Agenten entwickeln und trainieren |
+| **Kryptograph** | ZKP-Voting, Proof of Care/Compute und Identitätsmodule implementieren |
+| **Ökonom** | Demurrage-System und Liquidity Pool modellieren und stresstesten |
+| **Jurist** | Rechtsrahmen für Community-Währungen und DAOs erkunden |
+| **Autor / Übersetzer** | Whitepaper übersetzen, Dokumentation schreiben |
+| **Jeder** | Mitmachen, lokale Gruppe starten, kochen |
 
-See **[CONTRIBUTING.md](CONTRIBUTING.md)** for details.
+Siehe **[CONTRIBUTING.md](CONTRIBUTING.md)** für Details.
 
-## Project Structure
+## Projektstruktur
 
 ```
 solon-protocol/
-├── WHITEPAPER.md          # The full protocol specification
-├── CONTRIBUTING.md         # How to help
-├── LICENSE                 # MIT License
-├── contracts/              # Smart contracts (Solidity)
-│   ├── Tick.sol           # Demurrage currency
-│   ├── LiquidDemocracy.sol # Voting and delegation
-│   └── SoulboundToken.sol  # Heartbeat reputation tokens
-├── wallet/                 # Chronos Wallet app
-├── docs/                   # Additional documentation
-└── simulations/            # Economic models and stress tests
+├── WHITEPAPER.md              # Die vollständige Protokollspezifikation
+├── CONTRIBUTING.md             # Wie man mitmacht
+├── LICENSE                     # MIT-Lizenz
+├── contracts/                  # Smart Contracts (Solidity)
+│   ├── SolonCore.sol          # Demurrage-Währung + Geldschöpfung
+│   ├── LiquidityPool.sol      # Dezentrale Kreditvergabe + Solon-Bonds
+│   ├── LiquidDemocracy.sol    # Abstimmung und Delegation
+│   └── Pulse.sol              # Soulbound Reputation Tokens
+├── agents/                     # Genesis-Node KI-Agenten
+│   ├── genesis_node.py        # Projektmanagement-Agent
+│   └── allocation.py          # Ressourcen-Allokationsalgorithmus
+├── wallet/                     # Citizen Wallet App
+├── docs/                       # Weiterführende Dokumentation
+│   ├── ECONOMICS.md           # Makroökonomisches Modell
+│   ├── SECURITY.md            # Angriffsvektoren & Failsafes
+│   └── GOVERNANCE.md          # Protokoll-Updates & Soft Forks
+└── simulations/                # Ökonomische Modelle und Stresstests
 ```
 
-## Core Concepts
+## Kernkonzepte
 
-### The Tick
-A community currency. Everyone receives an equal distribution. 1% per month flows automatically to the community pool. You can't hoard it — it's designed to circulate.
+### Der Solon
+Eine souveräne Umlaufwährung. Jeder Bürger erhält ein bedingungsloses Grundeinkommen. Der Solon unterliegt einer programmierten Demurrage — er rostet. Die Demurrage-Rate passt sich algorithmisch an die zirkulierende Geldmenge an: `D(t+1) = D(t) + α · (M_aktuell – M_ziel)`. Geld, das nicht fließt, verliert an Wert. Geld, das zirkuliert, treibt die Wirtschaft an.
+
+### Der Liquidity Pool
+Wer Solon vor dem Rost schützen will, verleiht sie über den dezentralen Pool. Aber: Unmatched Liquidity rostet weiter — erst wenn ein Kreditnehmer das Geld tatsächlich abruft, erhält der Geldgeber einen Solon-Bond und entgeht der Demurrage. Kredite fließen per Fractional Streaming nach Baufortschritt. Der algorithmische Zins reguliert Angebot und Nachfrage ohne Zentralbank.
+
+### Bitcoin
+Der private Wertspeicher. Nicht manipulierbar, nicht konfiszierbar, deflationär. Was langfristig gehalten werden soll, wird in Bitcoin gespeichert. Der Solon ist zum Fließen da, Bitcoin ist zum Bewahren da.
 
 ### Liquid Democracy
-Your voice, your choice. Vote directly on things you understand. Delegate to experts on things you don't. Take your delegation back anytime.
+Deine Stimme, deine Wahl. Direkt abstimmen bei Themen, die du verstehst. An Experten delegieren bei Themen, die du nicht verstehst. Delegation jederzeit widerrufen. Zwei Budgetkreisläufe: Mikro-Budget (Kiez) und Makro-Budget (Infrastruktur).
 
-### The Heartbeat
-Not a score. Not a ranking. A mosaic of your contributions — craft, care, art, science, community, stewardship — attested by the people who witnessed them. Non-transferable. Non-tradable. Yours.
+### Der Heartbeat (Pulse)
+Kein Score. Kein Ranking. Ein Mosaik deiner Beiträge — Pflege, Handwerk, Forschung, Mentoring, Kunst, Code — bestätigt von denen, die sie bezeugt haben. Nicht übertragbar. Nicht handelbar. Soulbound. Dein. Halbwertszeit: 10 Jahre.
 
-### The Agora
-A physical place. A kitchen, a workshop, a garden. Designed so that paths cross, neighbors meet, and loneliness becomes statistically unlikely.
+### Genesis-Nodes
+Für jedes genehmigte öffentliche Projekt wird ein dedizierter KI-Agent instanziiert. Er prüft Machbarkeit, verhandelt autonom mit anderen Agents um knappe Ressourcen (Yield & Lease), dokumentiert alles auf einem Immutable Log. Dringlichkeit berechnet sich als: `Up = (Dw · Sp) / Rk`. Bei Deadlocks greift der Kleisthenes-Mechanismus: drei per Los gewählte Fachexperten entscheiden.
 
-## Principles
+### Anti-Sybil-Graph
+Der Wert gegenseitiger Bewertungen sinkt exponentiell mit jeder Wiederholung: `Wv = PA · e^(–γ · n)`. Cliquen werden entwertet, echte Vielfalt belohnt. Stille Arbeit (Code, Pflege) wird per Proof of Compute/Care via Zero-Knowledge Proofs validiert.
 
-1. **Rules in code, not in contracts.** Smart contracts execute; they don't negotiate.
-2. **Transparency of power, privacy of citizens.** The state is glass; the citizen is sovereign.
-3. **No delegation without recall.** Trust is a running contract, not a blank check.
-4. **Resource consumption is mathematically bounded.** No one prints Ticks. The protocol distributes them.
-5. **Incentives, not punishments.** The Heartbeat opens doors. It never closes them.
+## Prinzipien
 
-## The Name
+1. **Regeln im Code, nicht in Verträgen.** Smart Contracts führen aus — sie verhandeln nicht.
+2. **Transparenz der Macht, Privatsphäre der Bürger.** Der Staat ist Glas; der Bürger ist souverän.
+3. **Keine Delegation ohne Widerruf.** Vertrauen ist ein laufender Vertrag, kein Blankoscheck.
+4. **Ressourcenverbrauch ist mathematisch gebunden.** Niemand druckt Solon ohne demokratischen Beschluss.
+5. **Anreize, nicht Strafen.** Der Heartbeat öffnet Türen. Er schließt sie nie.
 
-Solon of Athens (638–558 BC) reformed the Athenian constitution, cancelled debts, and laid the groundwork for democracy. He then voluntarily left Athens for ten years, so the people would learn to govern themselves rather than depend on him.
+## Der Name
 
-The SOLON Protocol follows the same logic: build the tool, then step back.
+Solon von Athen (638–558 v. Chr.) reformierte die athenische Verfassung, erließ Schulden und legte den Grundstein für die Demokratie. Dann verließ er Athen freiwillig für zehn Jahre, damit das Volk lernte, sich selbst zu regieren, anstatt von ihm abhängig zu sein.
+
+Das SOLON-Protokoll folgt derselben Logik: Das Werkzeug bauen, dann zurücktreten.
+
+## Die Bücher
+
+Die theoretische Grundlage des Protokolls wird in drei Bänden erarbeitet:
+
+- **Band I: GELD — Der Speicher der Zeit** (Von Muscheln über Gold und Fiat zu Bitcoin und Solon)
+- **Band II: STAAT — Das Betriebssystem der Menschheit** (Von Lagerfeuern über Athen und Lobbykratie zu Liquid Democracy)
+- **Band III: ARBEIT — Die Entfaltung des Tuns** (Von Jägern und Sammlern über Bullshit Jobs zu Homo Ludens)
 
 ---
 
-*"I did not write this protocol to be right. I wrote it to start a conversation."*
+*„Ich habe dieses Protokoll nicht geschrieben, um Recht zu haben. Ich habe es geschrieben, um ein Gespräch zu beginnen."*
 — SOLON
 
-## License
+## Lizenz
 
-MIT License. Free to use, modify, distribute. See [LICENSE](LICENSE).
+MIT License. Frei verwendbar, modifizierbar, verteilbar. Siehe [LICENSE](LICENSE).

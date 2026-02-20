@@ -1,58 +1,48 @@
-# Contributing to SOLON Protocol
+# Mitarbeit am Solon-Protokoll
 
-Thank you for your interest. SOLON has no owner — only contributors.
+## Willkommen
 
-## How to Contribute
+Das Solon-Protokoll ist ein Open-Source-Experiment. Es braucht Entwickler, Ökonomen, Juristen, Designer, Übersetzer und Kritiker. Besonders Kritiker.
 
-### 1. Start Small
-- Read the [Whitepaper](WHITEPAPER.md)
-- Open an issue with questions, critiques, or ideas
-- Comment on existing issues and pull requests
+## Wie anfangen?
 
-### 2. Code
-- Fork the repository
-- Create a feature branch (`git checkout -b feature/tick-contract`)
-- Write tests
-- Submit a pull request with a clear description
+1. **Lies das [Whitepaper](WHITEPAPER.md).**
+2. **Wähle ein Modul**, das zu deinen Fähigkeiten passt (siehe unten).
+3. **Öffne ein Issue** oder kommentiere ein bestehendes.
+4. **Fork, branch, pull request.** Beschreibe klar, was du änderst und warum.
 
-### 3. Non-Code Contributions
-- **Economics**: Model the Tick system — simulate different demurrage rates, distribution curves, inter-Agora exchange
-- **Architecture**: Design Agora spatial guidelines based on Jane Jacobs' principles
-- **Legal**: Research legal frameworks for community currencies, DAOs, and cooperative governance in your jurisdiction
-- **Translation**: Translate the whitepaper into your language
-- **Documentation**: Improve docs, write tutorials, create diagrams
+## Module
 
-### 4. Start an Agora
-You don't need permission. You need:
-- 10+ people
-- A shared space (can be a kitchen table)
-- The Chronos Wallet (when available) or a spreadsheet to start
-- A willingness to experiment
+| Modul | Sprache | Status | Schwierigkeit |
+|---|---|---|---|
+| **Solon-Core** (Ledger, Demurrage, UBI) | Solidity | 🔴 Nicht begonnen | Hoch |
+| **Solon-Liquidity** (Pool, Bonds, Streaming) | Solidity | 🔴 Nicht begonnen | Hoch |
+| **Solon-Identity** (Pulse, ZKP) | Solidity + Circom | 🔴 Nicht begonnen | Sehr hoch |
+| **Solon-Agora** (Liquid Democracy) | Solidity | 🔴 Nicht begonnen | Mittel |
+| **Solon-Genesis** (KI-Agenten) | Python | 🔴 Nicht begonnen | Hoch |
+| **Citizen Wallet** (Frontend) | React Native | 🔴 Nicht begonnen | Mittel |
+| **Simulationen** (Ökonomische Modelle) | Python | 🟡 Konzeptphase | Mittel |
+| **Dokumentation** | Markdown | 🟡 In Arbeit | Niedrig |
 
-Document your experience. Share it. Every Agora is an experiment that teaches all others.
+## Code-Standards
 
-## Code Standards
+- Smart Contracts: Solidity 0.8+, vollständig getestet (Hardhat/Foundry), auditierbar
+- Python: Type Hints, pytest, Black-formatiert
+- Alle Commits auf Englisch, Issues auf Deutsch oder Englisch
+- Jeder PR braucht mindestens ein Review
 
-- Solidity contracts: Follow [Solidity Style Guide](https://docs.soliditylang.org/en/latest/style-guide.html)
-- All contracts must have >95% test coverage
-- All PRs require at least one review
-- Security-critical code requires two reviews and an audit trail
+## Was wir besonders brauchen
 
-## Communication
+- **Kryptographen** für Zero-Knowledge Proofs (Proof of Care, Proof of Compute)
+- **Ökonomen** für Stresstests der Demurrage-Dynamik
+- **KI-Ingenieure** für Genesis-Node-Architektur
+- **Juristen** für regulatorische Machbarkeitsanalysen
+- **Übersetzer** für das Whitepaper (Englisch, Spanisch, Französisch, Mandarin)
 
-- **GitHub Issues**: For bugs, features, and technical discussion
-- **Discussions**: For broader questions, philosophy, and Agora experiences
+## Verhaltenskodex
 
-## Code of Conduct
+Respektvoll, sachlich, konstruktiv. Wir diskutieren Ideen, nicht Personen. Trolling, Spam und persönliche Angriffe führen zum Ausschluss.
 
-Be kind. Be honest. Be constructive. The same principles that govern the Agora govern this repository.
+## Lizenz
 
-If you disagree, argue with the idea, not the person. If you're wrong, say so. If you're right, be generous about it.
-
-## License
-
-All contributions are licensed under MIT. By contributing, you agree that your work will be freely available to anyone.
-
----
-
-*The first Agora doesn't need code. It needs someone who cooks.*
+Alle Beiträge stehen unter der MIT-Lizenz.
